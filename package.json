@@ -4,12 +4,35 @@
   "description": "开箱即用 webpack配置",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=development node dev-server.js",
+    "build": "NODE_ENV=production webpack --config webpack.prod.js",
+    "start": "NODE_ENV=production node ./app/index.js"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/peterfont/webpack-config.git"
+    "type": "git",
+    "url": "https://github.com/peterfont/webpack-config.git"
   },
   "author": "peterfont@163.com",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "file-loader": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.34.0",
+    "autoprefixer": "^9.6.0",
+    "css-loader": "^3.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
