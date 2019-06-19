@@ -16,7 +16,7 @@ module.exports = {
     plugins: (loader) => [
       require("postcss-flexbugs-fixes"), // 支持flex
       autoprefixer({
-          browsers: [
+        overrideBrowserslist: [
               ">1%",
               "last 4 versions",
               "Firefox ESR",
