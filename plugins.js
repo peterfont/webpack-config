@@ -9,9 +9,9 @@ if (mode === 'development') {
   plugins.push(new webpack.HotModuleReplacementPlugin()); // hmr
 } else {
   plugins.push(new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-    }));
+    filename: mode === 'development' ? '[name].css' : '[name].[hash].css',
+    chunkFilename: mode === 'development' ? '[id].css' : '[id].[hash].css',
+  }));
 }
 
 module.exports = mergePlugins = (extendsPlugins) => {

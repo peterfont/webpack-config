@@ -4,5 +4,5 @@ module.exports = {
   devServerPort: 9000, // 
   contextPath: '.', // 默认路径
   extractCSS: false,
-  publicPath: '../',
+  publicPath: '/',
 }

@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { mode, devServerPort, contextPath, publicPath } = require('./constants');
 const mergePlugins = require('./plugins');
+const optimization = require('./optimization.js');
 const getSourceFile = function(sourcePath, contextPath) {
   return path.resolve(contextPath || __dirname, sourcePath);
 }
@@ -13,9 +14,17 @@ const defaultOptions = {
   outputPath: './dist/',
   template: './src/index.html',
 };
+
 module.exports = function(settting = {}) {
   const options = Object.assign(defaultOptions, settting);
-  const { entryPath, outputName, plugins, template, outputPath, port = devServerPort } = options;  
+  const {
+    entryPath,
+    outputName,
+    plugins,
+    template,
+    outputPath,
+    port = devServerPort,
+  } = options;
   return {
     entry: {
       app: getSourceFile(entryPath, contextPath),
@@ -30,12 +39,15 @@ module.exports = function(settting = {}) {
     },
     plugins: mergePlugins(plugins).concat(new HtmlWebpackPlugin({
       template: getSourceFile(template, contextPath),
+      filename: 'index.html',
     })),
     devServer: {
-      contentBase: getSourceFile(outputPath, contextPath),
+      contentBase: getSourceFile(template, contextPath),
+      publicPath,
       compress: mode !== 'development',
       port: port,
     },
+    optimization,
     mode,
   }
 };

@@ -1,24 +1,11 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const postcssLoader = require('./postcss-rule');
-const { mode, publicPath } = require('../constants.js');
+const miniCssExtractLoader = require('./minicss-extract-loader');
+const cssRule = require('./sass-rule');
+
+const { use } = cssRule;
+const mergeUse = [...use];
+mergeUse.splice(1,0,miniCssExtractLoader)
 module.exports = {
   test: /\.css$/,
-  use:[
-    {
-      loader: MiniCssExtractPlugin.loader,
-      options: {
-        publicPath,
-        hmr: mode === 'development',
-      },
-    },
-    {
-      loader: "css-loader",
-      options: {
-        // minimize: mode === 'produciton',
-        sourceMap: mode === 'produciton',
-        importLoaders: 1, //   0 =>无加载器（默认）; 1 => postcss-loader; 2 => postcss-loader，sass-loader 
-      },
-    },
-    postcssLoader,
-  ]
+  use: mergeUse,
 };
+
