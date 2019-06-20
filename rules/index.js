@@ -2,7 +2,8 @@
 const { mode } = require('../constants');
 
 const rules = [
-  require('./file-rule.js'),
+  require('./file-rule'),
+  require('./js-rule'),
 ];
 
 if (mode === 'production') { // 线上环境 抽出css文件
