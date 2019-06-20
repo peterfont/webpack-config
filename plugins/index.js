@@ -1,9 +1,12 @@
-const { mode } = './constants';
+const { mode } = '../constants';
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const plugins = [];
+
+if (process.env.npm_config_report) {
+  plugins.push(require('./bundle-analyzer-plugin'));
+}
 
 if (mode === 'development') {
   plugins.push(new webpack.HotModuleReplacementPlugin()); // hmr
