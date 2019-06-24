@@ -3,7 +3,7 @@
 // npm install -S babel-loader @babel/core @babel/preset-env webpack
 // polyfill支持
 // npm install -S @babel/plugin-transform-runtime
-// npm install @babel/runtime
+// npm install -S @babel/runtime
 module.exports = {
   test: /\.m?js$/,
   exclude: /(node_modules|bower_components)/,
