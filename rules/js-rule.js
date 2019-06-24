@@ -5,7 +5,7 @@
 // npm install -S @babel/plugin-transform-runtime
 // npm install -S @babel/runtime
 module.exports = {
-  test: /\.m?js$/,
+  test: /\.(jsx?)$/,
   exclude: /(node_modules|bower_components)/,
   use: {
     loader: 'babel-loader',
@@ -24,7 +24,9 @@ module.exports = {
           version: 2,
           proposals: true
         }
-      }]],
+      }],
+      // npm install --S @babel/preset-react
+      '@babel/preset-react'],
       plugins: ['@babel/plugin-transform-runtime']
     }
   }
