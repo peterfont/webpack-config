@@ -19,7 +19,7 @@ module.exports = {
         // @babel/polyfill在7.4.0中已弃用
         useBuiltIns: 'usage',
         // 需要显示指定 corejs版本
-        // npm install -S core-js@3
+        // npm install -S core-js@2
         corejs: {
           version: 2,
           proposals: true
@@ -27,7 +27,10 @@ module.exports = {
       }],
       // npm install --S @babel/preset-react
       '@babel/preset-react'],
-      plugins: ['@babel/plugin-transform-runtime']
+      plugins: [
+        '@babel/plugin-transform-runtime',
+        '@babel/proposal-class-properties',
+      ]
     }
   }
 }

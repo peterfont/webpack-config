@@ -42,7 +42,7 @@ module.exports = function(settting = {}) {
       filename: 'index.html',
     })),
     devServer: {
-      contentBase: getSourceFile(template, contextPath),
+      // contentBase: getSourceFile(template, contextPath),
       publicPath,
       compress: mode !== 'development',
       port: port,
