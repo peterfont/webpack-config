@@ -6,7 +6,7 @@
 // npm install -S @babel/runtime
 // TODO: 放开targets和plugins的支持
 module.exports = {
-  test: /\.(jsx?)$/,
+  test: /\.tsx?$/,
   exclude: /(node_modules|bower_components)/,
   use: {
     loader: 'babel-loader',
@@ -29,6 +29,8 @@ module.exports = {
         }],
         // npm install --S @babel/preset-react
         '@babel/preset-react',
+        // npm install -S @babel/preset-typescript
+        '@babel/preset-typescript',
       ],
       plugins: [
         '@babel/plugin-transform-runtime',
