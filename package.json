@@ -1,6 +1,6 @@
 {
   "name": "@panrpeng/webpack-config",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "开箱即用 webpack配置",
   "main": "webpack.config.js",
   "scripts": {
