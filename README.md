@@ -1,8 +1,8 @@
 # 开箱即用的webpack配置
 
-## 快速开始
+## 使用
 
-1. 创建目录：
+### 创建目录：
 ```
 my-app
   |_src
@@ -12,13 +12,13 @@ my-app
   |_package.json
   |_package-lock.json
 ```
-2. 编辑webpack.config.js
+### 编辑webpack.config.js
 ```
 const config = require('@panrpeng/webpack-config');
 
 module.exports = config;
 ```
-3. 编辑package.json
+### 编辑package.json
 ```
 "scripts": {
   "dev": "NODE_ENV=development webpack-dev-server",
@@ -27,11 +27,11 @@ module.exports = config;
   "check-types": "tsc"
 }
 ```
-4. 安装webpack-config
+### 安装webpack-config
 ```
 npm i -D @panrpeng/webpack-config
 ```
-5. 启动
+###  启动
 ```
 npm run dev
 ```
