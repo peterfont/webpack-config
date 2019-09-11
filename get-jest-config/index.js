@@ -7,7 +7,7 @@ module.exports = function(options) {
       //自定义如何处理js文件
       '^.+\\.jsx?$': path.resolve(__dirname, './js-processor.js'),
       // support ts 单元测试用例
-      '^.+\\.tsx?$': path.resolve(__dirname, './utils/ts-processor.js')
+      '^.+\\.tsx?$': path.resolve(__dirname, './ts-processor.js')
     },
     moduleDirectories: [path.resolve(appRoot, './src'), 'node_modules'],
     globals: {},
