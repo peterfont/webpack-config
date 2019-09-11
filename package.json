@@ -48,7 +48,8 @@
     "tslint-loader": "^3.5.4",
     "typescript": "^3.5.2",
     "webpack": "^4.35.0",
-    "webpack-bundle-analyzer": "^3.3.2"
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-cli": "^3.3.8"
   },
   "devDependencies": {
     "cz-conventional-changelog": "^2.1.0"
