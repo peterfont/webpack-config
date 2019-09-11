@@ -2,7 +2,7 @@ const path = require('path');
 const appRoot = process.cwd();
 module.exports = function(options) {
   return Object.assign({}, {
-    rootDir: path.resolve(__dirname), // 单元测试环境根目录
+    rootDir: '.', // 单元测试环境根目录
     transform: {
       //自定义如何处理js文件
       '^.+\\.jsx?$': path.resolve(__dirname, './js-processor.js'),
