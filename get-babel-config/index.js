@@ -20,7 +20,6 @@ const commonPresets = [
   }],
 ];
 const plugins = [
-  '@babel/plugin-transform-runtime',
   '@babel/proposal-class-properties',
 ]
 module.exports = function(type) {
